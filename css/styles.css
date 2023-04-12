@@ -1,0 +1,491 @@
+.form {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  margin: -0.8em;
+  padding: 1.2em;
+  background-color: #fff;
+  border-radius: 2em;
+  border: solid 0.2em lightblue;
+  box-shadow: 0.2em 0.2em 0.2em lightblue;
+  justify-items: center;
+  font-size: 1em;
+}
+
+.database {
+  padding: 0.8em;
+  background-color: #fff;
+  border-radius: 2em;
+  border: solid 0.2em lightblue;
+  box-shadow: 0.2em 0.2em lightblue;
+  justify-items: center;
+  font-size: 1em;
+}
+
+.crudForm {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  padding: 0.8em;
+  background-color: #fff;
+  border-radius: 2em;
+  border: solid 0.2em lightblue;
+  box-shadow: 0.2em 0.2em lightblue;
+  box-sizing: border-box;
+  justify-items: center;
+  font-size: 1em;
+}
+
+.crudInput {
+  border-style: none;
+  border-radius: 2em;
+  width: 8em;
+  background-color: #eee;
+  padding: 0.8em;
+  font-size: 1em;
+  box-shadow: 0.2em 0.2em lightblue;
+}
+
+.crudButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.8em;
+  padding: 0.8em;
+  width: 100%;
+  height: 100%;
+}
+
+.crudButton {
+  border-style: none;
+  border-radius: 0.2em;
+  background-color: #393;
+  padding: 0.8em;
+  color: #fff;
+  font-size: 1em;
+  box-shadow: 0.2em 0.2em darkgreen;
+}
+
+#addUser {
+  background-color: #1af;
+  box-shadow: 0.2em 0.2em #09b;
+}
+
+#editUser {
+  background-color: #fb1;
+  box-shadow: 0.2em 0.2em #f81;
+}
+
+#removeUser {
+  background-color: #d11;
+  box-shadow: 0.2em 0.2em #a00;
+}
+
+.searchClients {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 0.8em;
+  padding: 0.8em;
+  width: 100%;
+  height: 100%;
+}
+
+.saveForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0.8em;
+  gap: 0.8em;
+  background-color: #fff;
+  border-radius: 2em;
+  border: solid 0.2em lightblue;
+  box-shadow: 0.2em 0.2em lightblue;
+  box-sizing: border-box;
+  justify-items: center;
+  font-size: 1em;
+}
+
+.textContainer {
+  padding: 0.8em;
+  background-color: #fff;
+  border-radius: 2em;
+  border: solid 0.2em lightblue;
+  box-shadow: 0.2em 0.2em lightblue;
+  justify-items: center;
+  font-size: 1em;
+}
+
+.message {
+  padding: 1.4em;
+  width: 100%;
+  height: 100%;
+}
+
+.message a {
+  float: left;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1.4em;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.navbar a {
+  display: flex;
+  margin-right: 0.2em;
+  margin-left: 0.2em;
+}
+
+.userGreet {
+  display: flex;
+  font-family: Arial;
+  font-size: 2em;
+  color: #fff;
+}
+
+.errorWindow {
+  padding: 0.8em;
+  background-color: #fff;
+  border-radius: 2em;
+  box-shadow: 0.2em 0.2em lightblue;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 0.9em;
+  color: #f00;
+}
+
+.linkButton:link, .linkButton:visited, .linkButton:hover, .linkButton:active {
+  padding: 0.8em;
+  background-color: #393;
+  border-radius: 2em;
+  box-shadow: 0.2em 0.2em darkgreen;
+  font-size: 0.9em;
+  color: #fff;
+  text-decoration: none;
+}
+
+html {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-family: Arial;
+  background: linear-gradient(#444, #111);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #222;
+  font-family: Arial;
+}
+
+body {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-family: Arial;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  height: 2.5em;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #222;
+  font-family: Arial;
+  color: #fff;
+  justify-content: center;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+}
+
+input {
+  border-style: none;
+  border-radius: 2em;
+  width: 18em;
+  background-color: #eee;
+  padding: 0.8em;
+  font-size: 1em;
+  box-shadow: 0.2em 0.2em lightblue;
+}
+
+button {
+  border-style: none;
+  border-radius: 2em;
+  background-color: #393;
+  padding: 0.8em;
+  color: #fff;
+  font-size: 1em;
+  box-shadow: 0.2em 0.2em darkgreen;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+@media only screen and (min-width: 600px) {
+  .form {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    margin: -0.8em;
+    padding: 1.2em;
+    background-color: #fff;
+    border-radius: 2em;
+    border: solid 0.2em lightblue;
+    box-shadow: 0.2em 0.2em 0.2em lightblue;
+    justify-items: center;
+    font-size: 1.2em;
+  }
+  
+  .database {
+    padding: 0.8em;
+    background-color: #fff;
+    border-radius: 2em;
+    border: solid 0.2em lightblue;
+    box-shadow: 0.2em 0.2em lightblue;
+    justify-items: center;
+    font-size: 1.2em;
+  }
+  
+  .crudForm {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 0.8em;
+    background-color: #fff;
+    border-radius: 2em;
+    border: solid 0.2em lightblue;
+    box-shadow: 0.2em 0.2em lightblue;
+    box-sizing: border-box;
+    justify-items: center;
+    font-size: 1.2em;
+  }
+  
+  .crudInput {
+    border-style: none;
+    border-radius: 2em;
+    width: 8em;
+    background-color: #eee;
+    padding: 0.8em;
+    font-size: 1.2em;
+    box-shadow: 0.2em 0.2em lightblue;
+  }
+  
+  .crudButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.8em;
+    padding: 0.8em;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .crudButton {
+    border-style: none;
+    border-radius: 0.2em;
+    background-color: #393;
+    padding: 0.8em;
+    color: #fff;
+    font-size: 1.2em;
+    box-shadow: 0.2em 0.2em darkgreen;
+  }
+  
+  #addUser {
+    background-color: #1af;
+    box-shadow: 0.2em 0.2em #09b;
+  }
+  
+  #editUser {
+    background-color: #fb1;
+    box-shadow: 0.2em 0.2em #f81;
+  }
+  
+  #removeUser {
+    background-color: #d11;
+    box-shadow: 0.2em 0.2em #a00;
+  }
+  
+  .searchClients {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 0.8em;
+    padding: 0.8em;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .saveForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0.8em;
+    gap: 0.8em;
+    background-color: #fff;
+    border-radius: 2em;
+    border: solid 0.2em lightblue;
+    box-shadow: 0.2em 0.2em lightblue;
+    box-sizing: border-box;
+    justify-items: center;
+    font-size: 1.2em;
+  }
+  
+  .textContainer {
+    padding: 0.8em;
+    background-color: #fff;
+    border-radius: 2em;
+    border: solid 0.2em lightblue;
+    box-shadow: 0.2em 0.2em lightblue;
+    justify-items: center;
+    font-size: 1.4em;
+  }
+  
+  .message {
+    padding: 1.4em;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .message a {
+    float: left;
+  }
+  
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 1.2em;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  
+  .navbar a {
+    display: flex;
+    margin-right: 0.2em;
+    margin-left: 0.2em;
+  }
+  
+  .userGreet {
+    display: flex;
+    font-family: Arial;
+    font-size: 2em;
+    color: #fff;
+  }
+  
+  .errorWindow {
+    padding: 0.8em;
+    background-color: #fff;
+    border-radius: 2em;
+    box-shadow: 0.2em 0.2em lightblue;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 1em;
+    color: #f00;
+  }
+  
+  .linkButton:link, .linkButton:visited, .linkButton:hover, .linkButton:active {
+    padding: 0.8em;
+    background-color: #393;
+    border-radius: 2em;
+    box-shadow: 0.2em 0.2em darkgreen;
+    font-size: 1.2em;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  html {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    font-family: Arial;
+    background: linear-gradient(#444, #111);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #222;
+    font-family: Arial;
+  }
+  
+  body {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-family: Arial;
+  }
+  
+  footer {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    height: 2.5em;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #222;
+    font-family: Arial;
+    color: #fff;
+    justify-content: center;
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+  }
+  
+  input {
+    border-style: none;
+    border-radius: 2em;
+    width: 18em;
+    background-color: #eee;
+    padding: 0.8em;
+    font-size: 1.2em;
+    box-shadow: 0.2em 0.2em lightblue;
+  }
+  
+  button {
+    border-style: none;
+    border-radius: 2em;
+    background-color: #393;
+    padding: 0.8em;
+    color: #fff;
+    font-size: 1.2em;
+    box-shadow: 0.2em 0.2em darkgreen;
+  }
+}

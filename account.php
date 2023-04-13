@@ -41,6 +41,7 @@
       </a>
     </div>
   </header>
+  <div class="headerSpacer"></div>
   <body>
     <div class="userGreet">
       <p><?php echo $_SESSION['nome'];?>, você tem 0 clientes.</p>
@@ -65,10 +66,27 @@
           </button>
         </div>
       </form>
-      <div class="crudForm">
-        <p>This is going to be the grid laskkdskskkskskdkdkdkdkskskdjd</p>
-      </div>
+      <select class="clientsContainer" name="selectedClients" multiple>
+          <?php
+          include("dbconnect.php");
+          $idUsuario = $_SESSION['id'];
+          $sql_clients_code = "SELECT * FROM clientes WHERE idUsuario = '$idUsuario'";
+          $sql_clients_query = $mysqli->query($sql_clients_code) or die('Falha na execução do SQL: clients query');
+          $sql_clients_result = $sql_clients_result->num_rows;
+          if($sql_clients_result->num_rows > 0){
+            while($row = $sql_clients_result->fetch_assoc()) {
+              $idCliente = $row['idClient'];
+              $nomeCliente = $row['nomeCliente'];
+              $emailCliente = $row['emailCliente'];
+              $telCliente = $row['telCliente'];
+
+              echo "<option value='$idCliente'></option>";
+            }
+          }
+          ?>
+      </select>
     </div>
+    <div class="footerSpacer"></div>
     <footer>
       <p>This is the footer ok :} Copyright 2023.</p>
     </footer>

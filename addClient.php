@@ -62,6 +62,7 @@ if(isset($_POST['saveData'])) {
       </a>
     </div>
   </header>
+  <div class="headerSpacer"></div>
   <body>
     <form class="crudForm" action="" method="POST">
       <div class="saveForm">
@@ -82,6 +83,7 @@ if(isset($_POST['saveData'])) {
         </input>
       </div>
     </form>
+    <div class="footerSpacer"></div>
     <footer>
       <a>This is the footer ok :} Copyright 2023.</a>
     </footer>

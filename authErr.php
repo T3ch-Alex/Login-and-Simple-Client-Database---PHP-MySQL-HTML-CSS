@@ -27,11 +27,13 @@
       </a>
     </div>
   </header>
+  <div class="headerSpacer"></div>
   <body>
     <p class="textContainer">
       Você não está logado, acesso negado
     </p>
     <a class="linkButton" href="index.php">Entrar</a>
+    <div class="footerSpacer"></div>
     <footer>
       <a>This is the footer ok :} Copyright 2023.</a>
     </footer>

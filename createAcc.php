@@ -66,6 +66,7 @@
       </a>
     </div>
   </header>
+  <div class="headerSpacer"></div>
   <body>
     <form class="form" id="loginForm" action="" method="POST">
       <p>Crie sua conta abaixo!</p>
@@ -101,6 +102,7 @@
         <a href="index.php" >Fazer login</a>
       </p>
     </form>
+    <div class="footerSpacer"></div>
     <footer>
       <a>This is the footer ok :} Copyright 2023.</a>
     </footer>

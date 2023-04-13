@@ -9,7 +9,7 @@
   border: solid 0.2em lightblue;
   box-shadow: 0.2em 0.2em 0.2em lightblue;
   justify-items: center;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .database {
@@ -19,7 +19,7 @@
   border: solid 0.2em lightblue;
   box-shadow: 0.2em 0.2em lightblue;
   justify-items: center;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .crudForm {
@@ -34,7 +34,7 @@
   box-shadow: 0.2em 0.2em lightblue;
   box-sizing: border-box;
   justify-items: center;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .crudInput {
@@ -43,7 +43,7 @@
   width: 8em;
   background-color: #eee;
   padding: 0.8em;
-  font-size: 1em;
+  font-size: 0.8em;
   box-shadow: 0.2em 0.2em lightblue;
 }
 
@@ -63,7 +63,7 @@
   background-color: #393;
   padding: 0.8em;
   color: #fff;
-  font-size: 1em;
+  font-size: 0.8em;
   box-shadow: 0.2em 0.2em darkgreen;
 }
 
@@ -105,7 +105,18 @@
   box-shadow: 0.2em 0.2em lightblue;
   box-sizing: border-box;
   justify-items: center;
-  font-size: 1em;
+  font-size: 0.8em;
+}
+
+.clientsContainer {
+  padding: 0.8em;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2em;
+  border: solid 0.2em lightblue;
+  box-shadow: 0.2em 0.2em lightblue;
+  justify-items: center;
+  font-size: 0.8em;
 }
 
 .textContainer {
@@ -115,7 +126,7 @@
   border: solid 0.2em lightblue;
   box-shadow: 0.2em 0.2em lightblue;
   justify-items: center;
-  font-size: 1em;
+  font-size: 0.8em;
 }
 
 .message {
@@ -161,7 +172,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: #f00;
 }
 
@@ -170,7 +181,7 @@
   background-color: #393;
   border-radius: 2em;
   box-shadow: 0.2em 0.2em darkgreen;
-  font-size: 0.9em;
+  font-size: 0.8em;
   color: #fff;
   text-decoration: none;
 }
@@ -182,7 +193,9 @@ html {
   font-family: Arial;
   background: linear-gradient(#444, #111);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: auto;
 }
 
 header {
@@ -196,6 +209,14 @@ header {
   font-family: Arial;
 }
 
+.headerSpacer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  margin: 4em;
+}
+
 body {
   display: grid;
   justify-items: center;
@@ -203,22 +224,28 @@ body {
   align-items: center;
   align-content: center;
   font-family: Arial;
+  height: 100%;
+}
+
+.footerSpacer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  margin: 3em;
 }
 
 footer {
-  display: flex;
-  flex-direction: row;
-  position: absolute;
+  position: fixed;
+  padding-top: 0.8em;
   height: 2.5em;
-  width: 100%;
-  bottom: 0;
-  left: 0;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
   background-color: #222;
   font-family: Arial;
   color: #fff;
-  justify-content: center;
-  padding-top: 0.8em;
-  padding-bottom: 0.8em;
+  text-align: center;
 }
 
 input {
@@ -227,7 +254,7 @@ input {
   width: 18em;
   background-color: #eee;
   padding: 0.8em;
-  font-size: 1em;
+  font-size: 0.8em;
   box-shadow: 0.2em 0.2em lightblue;
 }
 
@@ -237,7 +264,7 @@ button {
   background-color: #393;
   padding: 0.8em;
   color: #fff;
-  font-size: 1em;
+  font-size: 0.8em;
   box-shadow: 0.2em 0.2em darkgreen;
 }
 
@@ -257,7 +284,7 @@ button {
     border: solid 0.2em lightblue;
     box-shadow: 0.2em 0.2em 0.2em lightblue;
     justify-items: center;
-    font-size: 1.2em;
+    font-size: 1em;
   }
   
   .database {
@@ -267,7 +294,7 @@ button {
     border: solid 0.2em lightblue;
     box-shadow: 0.2em 0.2em lightblue;
     justify-items: center;
-    font-size: 1.2em;
+    font-size: 1em;
   }
   
   .crudForm {
@@ -282,7 +309,7 @@ button {
     box-shadow: 0.2em 0.2em lightblue;
     box-sizing: border-box;
     justify-items: center;
-    font-size: 1.2em;
+    font-size: 1em;
   }
   
   .crudInput {
@@ -291,7 +318,7 @@ button {
     width: 8em;
     background-color: #eee;
     padding: 0.8em;
-    font-size: 1.2em;
+    font-size: 1em;
     box-shadow: 0.2em 0.2em lightblue;
   }
   
@@ -311,7 +338,7 @@ button {
     background-color: #393;
     padding: 0.8em;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1em;
     box-shadow: 0.2em 0.2em darkgreen;
   }
   
@@ -353,7 +380,7 @@ button {
     box-shadow: 0.2em 0.2em lightblue;
     box-sizing: border-box;
     justify-items: center;
-    font-size: 1.2em;
+    font-size: 1em;
   }
   
   .textContainer {
@@ -363,7 +390,7 @@ button {
     border: solid 0.2em lightblue;
     box-shadow: 0.2em 0.2em lightblue;
     justify-items: center;
-    font-size: 1.4em;
+    font-size: 1em;
   }
   
   .message {
@@ -396,7 +423,7 @@ button {
   .userGreet {
     display: flex;
     font-family: Arial;
-    font-size: 2em;
+    font-size: 1.2em;
     color: #fff;
   }
   
@@ -409,7 +436,7 @@ button {
     justify-content: center;
     align-items: center;
     align-content: center;
-    font-size: 1em;
+    font-size: 0.8em;
     color: #f00;
   }
   
@@ -418,7 +445,7 @@ button {
     background-color: #393;
     border-radius: 2em;
     box-shadow: 0.2em 0.2em darkgreen;
-    font-size: 1.2em;
+    font-size: 1em;
     color: #fff;
     text-decoration: none;
   }
@@ -430,7 +457,9 @@ button {
     font-family: Arial;
     background: linear-gradient(#444, #111);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: auto;
   }
   
   header {
@@ -444,6 +473,14 @@ button {
     font-family: Arial;
   }
   
+  .headerSpacer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin: 4em;
+  }
+  
   body {
     display: grid;
     justify-items: center;
@@ -451,22 +488,28 @@ button {
     align-items: center;
     align-content: center;
     font-family: Arial;
+    height: 100%;
+  }
+  
+  .footerSpacer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin: 3em;
   }
   
   footer {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
+    position: fixed;
+    padding-top: 0.8em;
     height: 2.5em;
-    width: 100%;
-    bottom: 0;
-    left: 0;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
     background-color: #222;
     font-family: Arial;
     color: #fff;
-    justify-content: center;
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
+    text-align: center;
   }
   
   input {
@@ -475,7 +518,7 @@ button {
     width: 18em;
     background-color: #eee;
     padding: 0.8em;
-    font-size: 1.2em;
+    font-size: 1em;
     box-shadow: 0.2em 0.2em lightblue;
   }
   
@@ -485,7 +528,7 @@ button {
     background-color: #393;
     padding: 0.8em;
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1em;
     box-shadow: 0.2em 0.2em darkgreen;
   }
 }

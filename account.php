@@ -72,16 +72,29 @@
           $idUsuario = $_SESSION['id'];
           $sql_clients_code = "SELECT * FROM clientes WHERE idUsuario = '$idUsuario'";
           $sql_clients_query = $mysqli->query($sql_clients_code) or die('Falha na execução do SQL: clients query');
-          $sql_clients_result = $sql_clients_result->num_rows;
-          if($sql_clients_result->num_rows > 0){
-            while($row = $sql_clients_result->fetch_assoc()) {
-              $idCliente = $row['idClient'];
+          $sql_clients_result = $sql_clients_query->num_rows;
+          if($sql_clients_result > 0){
+
+            echo '<table> <tr> <th> ID </th> <th> Nome </th> <th> E-mail </th> <th> Contato </th> </tr>';
+
+            while($row = $sql_clients_query->fetch_assoc()) {
+              $idCliente = $row['idCliente'];
               $nomeCliente = $row['nomeCliente'];
               $emailCliente = $row['emailCliente'];
               $telCliente = $row['telCliente'];
-
-              echo "<option value='$idCliente'></option>";
+              echo "
+                <option value='$idCliente'>
+                  <tr>
+                    <td>$idCliente</td>
+                    <td>$nomeCliente</td>
+                    <td>$emailCliente</td>
+                    <td>$telCliente</td>
+                  </tr>
+                </option>
+              ";
             }
+
+            echo '</table>';
           }
           ?>
       </select>

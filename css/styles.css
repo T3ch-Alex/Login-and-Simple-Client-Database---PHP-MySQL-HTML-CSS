@@ -268,6 +268,24 @@ button {
   box-shadow: 0.2em 0.2em darkgreen;
 }
 
+table {
+  width: 70%;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+table, tr, th, td {
+  border: 0.2em solid #383838;
+  border-collapse: collapse;
+  padding: 0.8em;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+}
+tr:nth-child(even) {
+  background-color: #e7e9eb;
+}
+
 
 /* -------------------------------------------------------------------------- */
 
@@ -530,5 +548,23 @@ button {
     color: #fff;
     font-size: 1em;
     box-shadow: 0.2em 0.2em darkgreen;
+  }
+
+  table{
+    width: 70%;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  table, tr, th, td{
+    border: 0.2em solid #383838;
+    border-collapse: collapse;
+    padding: 0.8em;
+  }
+  th, td{
+    text-align: left;
+    vertical-align: top;
+  }
+  tr:nth-child(even){
+    background-color: #e7e9eb;
   }
 }

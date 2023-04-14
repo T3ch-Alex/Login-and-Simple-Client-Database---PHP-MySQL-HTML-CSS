@@ -1,6 +1,7 @@
 <?php
   include("protect.php");
   include("utils.php");
+  include("dbconnect.php");
   
   if(isset($_POST['addClient'])) {
     addClient();
@@ -8,6 +9,19 @@
   
   function addClient() {
     header("Location: addClient.php");
+  }
+
+  if(isset($_POST['removeClient'])) {
+    if(isset($_POST['checkboxList'])) {
+      $checkboxList = $_POST['checkboxList'];
+      foreach($checkboxList as $client) {
+        //$sql_code_delete = "DELETE FROM clientes WHERE idCliente = '$idCliente'";
+        //$sql_query_delete = $mysqli->query($sql_code_delete) or die("Falha na execuçãod da query: Delete Query");
+      }
+      
+
+      //header("Location: addClient.php");
+    }
   }
 ?>
 
@@ -66,21 +80,23 @@
           </button>
         </div>
       </form>
-      <select class="clientsContainer" name="selectedClients" multiple>
-          <?php
-          include("dbconnect.php");
+      <form class="clientsContainer" method="post">
+        <?php
           echo "<table>
             <tr> 
+              <th> </th>
               <th> ID </th> 
               <th> Nome </th> 
               <th> E-mail </th> 
               <th> Contato </th> 
             </tr>
           ";
+
           $idUsuario = $_SESSION['id'];
           $sql_clients_code = "SELECT * FROM clientes WHERE idUsuario = '$idUsuario'";
           $sql_clients_query = $mysqli->query($sql_clients_code) or die('Falha na execução do SQL: clients query');
           $sql_clients_result = $sql_clients_query->num_rows;
+
           if($sql_clients_result > 0){
             while($row = $sql_clients_query->fetch_assoc()) {
               $idCliente = $row['idCliente'];
@@ -88,19 +104,19 @@
               $emailCliente = $row['emailCliente'];
               $telCliente = $row['telCliente'];
               echo "
-                <option class='textContainer' value='$idCliente'>
-
-                    <hr>$idCliente</hr>
-                    <hr>$nomeCliente</hr>
-                    <hr>$emailCliente</hr>
-                    <hr>$telCliente</hr>
-                </option>
+                <tr>
+                    <td><input id='checkClientList' type='checkbox' name='checkboxList[]' value='$idCliente'></td>
+                    <td>$idCliente</td>
+                    <td>$nomeCliente</td>
+                    <td>$emailCliente</td>
+                    <td>$telCliente</td>
+                </tr>
               ";
             }
           }
           echo "</table>";
-          ?>
-        </select>
+        ?>
+      </form>
     </div>
     <div class="footerSpacer"></div>
     <footer>

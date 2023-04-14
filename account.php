@@ -13,14 +13,15 @@
 
   if(isset($_POST['removeClient'])) {
     if(isset($_POST['checkboxList'])) {
-      $checkboxList = $_POST['checkboxList'];
-      foreach($checkboxList as $client) {
+      customError("Im here");
+      foreach($_POST['checkboxList'] as $client) {
+        echo $client;
         //$sql_code_delete = "DELETE FROM clientes WHERE idCliente = '$idCliente'";
-        //$sql_query_delete = $mysqli->query($sql_code_delete) or die("Falha na execuçãod da query: Delete Query");
+        //$sql_query_delete = $mysqli->query($sql_code_delete) or die("Falha na execução da query: Delete Query");
       }
       
 
-      //header("Location: addClient.php");
+      header("Location: addClient.php");
     }
   }
 ?>
@@ -105,7 +106,7 @@
               $telCliente = $row['telCliente'];
               echo "
                 <tr>
-                    <td><input id='checkClientList' type='checkbox' name='checkboxList[]' value='$idCliente'></td>
+                    <td><input id='checkClientList' type='checkbox' name='checkboxList[]' value='1'></td>
                     <td>$idCliente</td>
                     <td>$nomeCliente</td>
                     <td>$emailCliente</td>

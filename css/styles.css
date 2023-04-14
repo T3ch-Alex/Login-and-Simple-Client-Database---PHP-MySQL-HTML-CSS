@@ -400,6 +400,19 @@ tr:nth-child(even) {
     justify-items: center;
     font-size: 1em;
   }
+
+  .clientsContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 0.8em;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2em;
+    border: solid 0.2em lightblue;
+    box-shadow: 0.2em 0.2em lightblue;
+    justify-items: center;
+    font-size: 0.8em;
+  }
   
   .textContainer {
     padding: 0.8em;

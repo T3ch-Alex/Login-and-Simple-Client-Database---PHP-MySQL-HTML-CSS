@@ -9,7 +9,7 @@
   border: solid 0.2em lightblue;
   box-shadow: 0.2em 0.2em 0.2em lightblue;
   justify-items: center;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .database {
@@ -19,14 +19,13 @@
   border: solid 0.2em lightblue;
   box-shadow: 0.2em 0.2em lightblue;
   justify-items: center;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .crudForm {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   padding: 0.8em;
   background-color: #fff;
   border-radius: 2em;
@@ -34,7 +33,9 @@
   box-shadow: 0.2em 0.2em lightblue;
   box-sizing: border-box;
   justify-items: center;
-  font-size: 0.8em;
+  align-items: flex-start;
+  align-content: center;
+  font-size: 1em;
 }
 
 .crudInput {
@@ -43,7 +44,7 @@
   width: 8em;
   background-color: #eee;
   padding: 0.8em;
-  font-size: 0.8em;
+  font-size: 1em;
   box-shadow: 0.2em 0.2em lightblue;
 }
 
@@ -54,7 +55,8 @@
   gap: 0.8em;
   padding: 0.8em;
   width: 100%;
-  height: 100%;
+  align-items: center;
+  align-content: center;
 }
 
 .crudButton {
@@ -63,7 +65,7 @@
   background-color: #393;
   padding: 0.8em;
   color: #fff;
-  font-size: 0.8em;
+  font-size: 1em;
   box-shadow: 0.2em 0.2em darkgreen;
 }
 
@@ -82,6 +84,11 @@
   box-shadow: 0.2em 0.2em #a00;
 }
 
+#closeButton {
+  background-color: #d11;
+  box-shadow: 0.2em 0.2em #a00;
+}
+
 .searchClients {
   display: flex;
   flex-direction: row;
@@ -89,7 +96,10 @@
   gap: 0.8em;
   padding: 0.8em;
   width: 100%;
-  height: 100%;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
 }
 
 .saveForm {
@@ -105,10 +115,12 @@
   box-shadow: 0.2em 0.2em lightblue;
   box-sizing: border-box;
   justify-items: center;
-  font-size: 0.8em;
+  font-size: 1em;
 }
 
 .clientsContainer {
+  display: flex;
+  flex-direction: row;
   padding: 0.8em;
   width: inherit;
   overflow: auto;
@@ -127,7 +139,16 @@
   border: solid 0.2em lightblue;
   box-shadow: 0.2em 0.2em lightblue;
   justify-items: center;
-  font-size: 0.8em;
+  font-size: 1em;
+}
+
+#checkClientList {
+  padding: 0.8em;
+  justify-items: center;
+  font-size: 1em;
+  border-radius: none;
+  box-shadow: none;
+  width: 1em;
 }
 
 .message {
@@ -144,7 +165,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  padding: 1.4em;
+  padding: 1.2em;
   width: 100%;
   height: 100%;
 }
@@ -160,21 +181,8 @@
 .userGreet {
   display: flex;
   font-family: Arial;
-  font-size: 2em;
+  font-size: 1.2em;
   color: #fff;
-}
-
-.errorWindow {
-  padding: 0.8em;
-  background-color: #fff;
-  border-radius: 2em;
-  box-shadow: 0.2em 0.2em lightblue;
-  justify-items: center;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  font-size: 0.8em;
-  color: #f00;
 }
 
 .linkButton:link, .linkButton:visited, .linkButton:hover, .linkButton:active {
@@ -182,7 +190,7 @@
   background-color: #393;
   border-radius: 2em;
   box-shadow: 0.2em 0.2em darkgreen;
-  font-size: 0.8em;
+  font-size: 1em;
   color: #fff;
   text-decoration: none;
 }
@@ -216,6 +224,23 @@ header {
   width: 100%;
   height: 100%;
   margin: 4em;
+}
+
+.errorWindow {
+  display: flex;
+  flex-direction: row;
+  margin: 4em;
+  padding: 0.8em;
+  gap: 0.8em;
+  background-color: #fff;
+  border-radius: 2em;
+  box-shadow: 0.2em 0.2em lightblue;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-size: 0.8em;
+  color: #f00;
 }
 
 body {
@@ -255,7 +280,7 @@ input {
   width: 18em;
   background-color: #eee;
   padding: 0.8em;
-  font-size: 0.8em;
+  font-size: 1em;
   box-shadow: 0.2em 0.2em lightblue;
 }
 
@@ -265,309 +290,6 @@ button {
   background-color: #393;
   padding: 0.8em;
   color: #fff;
-  font-size: 0.8em;
+  font-size: 1em;
   box-shadow: 0.2em 0.2em darkgreen;
-}
-
-
-/* -------------------------------------------------------------------------- */
-
-
-@media only screen and (min-width: 600px) {
-  .form {
-    display: grid;
-    width: 100%;
-    height: 100%;
-    margin: -0.8em;
-    padding: 1.2em;
-    background-color: #fff;
-    border-radius: 2em;
-    border: solid 0.2em lightblue;
-    box-shadow: 0.2em 0.2em 0.2em lightblue;
-    justify-items: center;
-    font-size: 1em;
-  }
-  
-  .database {
-    padding: 0.8em;
-    background-color: #fff;
-    border-radius: 2em;
-    border: solid 0.2em lightblue;
-    box-shadow: 0.2em 0.2em lightblue;
-    justify-items: center;
-    font-size: 1em;
-  }
-  
-  .crudForm {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    padding: 0.8em;
-    background-color: #fff;
-    border-radius: 2em;
-    border: solid 0.2em lightblue;
-    box-shadow: 0.2em 0.2em lightblue;
-    box-sizing: border-box;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-    font-size: 1em;
-  }
-  
-  .crudInput {
-    border-style: none;
-    border-radius: 2em;
-    width: 8em;
-    background-color: #eee;
-    padding: 0.8em;
-    font-size: 1em;
-    box-shadow: 0.2em 0.2em lightblue;
-  }
-  
-  .crudButtons {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 0.8em;
-    padding: 0.8em;
-    width: 100%;
-    align-items: center;
-    align-content: center;
-  }
-  
-  .crudButton {
-    border-style: none;
-    border-radius: 0.2em;
-    background-color: #393;
-    padding: 0.8em;
-    color: #fff;
-    font-size: 1em;
-    box-shadow: 0.2em 0.2em darkgreen;
-  }
-  
-  #addUser {
-    background-color: #1af;
-    box-shadow: 0.2em 0.2em #09b;
-  }
-  
-  #editUser {
-    background-color: #fb1;
-    box-shadow: 0.2em 0.2em #f81;
-  }
-  
-  #removeUser {
-    background-color: #d11;
-    box-shadow: 0.2em 0.2em #a00;
-  }
-
-  #closeButton {
-    background-color: #d11;
-    box-shadow: 0.2em 0.2em #a00;
-  }
-  
-  .searchClients {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 0.8em;
-    padding: 0.8em;
-    width: 100%;
-    align-items: center;
-    align-content: center;
-    justify-items: center;
-    text-align: center;
-  }
-  
-  .saveForm {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    padding: 0.8em;
-    gap: 0.8em;
-    background-color: #fff;
-    border-radius: 2em;
-    border: solid 0.2em lightblue;
-    box-shadow: 0.2em 0.2em lightblue;
-    box-sizing: border-box;
-    justify-items: center;
-    font-size: 1em;
-  }
-
-  .clientsContainer {
-    display: flex;
-    flex-direction: row;
-    padding: 0.8em;
-    width: inherit;
-    overflow: auto;
-    background-color: #fff;
-    border-radius: 2em;
-    border: solid 0.2em lightblue;
-    box-shadow: 0.2em 0.2em lightblue;
-    justify-items: center;
-    font-size: 0.8em;
-  }
-  
-  .textContainer {
-    padding: 0.8em;
-    background-color: #fff;
-    border-radius: 2em;
-    border: solid 0.2em lightblue;
-    box-shadow: 0.2em 0.2em lightblue;
-    justify-items: center;
-    font-size: 1em;
-  }
-
-  #checkClientList {
-    padding: 0.8em;
-    justify-items: center;
-    font-size: 1em;
-    border-radius: none;
-    box-shadow: none;
-    width: 1em;
-  }
-  
-  .message {
-    padding: 1.4em;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .message a {
-    float: left;
-  }
-  
-  .navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 1.2em;
-    width: 100%;
-    height: 100%;
-  }
-  
-  
-  
-  .navbar a {
-    display: flex;
-    margin-right: 0.2em;
-    margin-left: 0.2em;
-  }
-  
-  .userGreet {
-    display: flex;
-    font-family: Arial;
-    font-size: 1.2em;
-    color: #fff;
-  }
-  
-  .errorWindow {
-    display: flex;
-    position: fixed;
-    z-index: 100;
-    bottom: 75%;
-    padding: 0.8em;
-    gap: 0.8em;
-    background-color: #fff;
-    border-radius: 2em;
-    box-shadow: 0.2em 0.2em lightblue;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    font-size: 0.8em;
-    color: #f00;
-  }
-  
-  .linkButton:link, .linkButton:visited, .linkButton:hover, .linkButton:active {
-    padding: 0.8em;
-    background-color: #393;
-    border-radius: 2em;
-    box-shadow: 0.2em 0.2em darkgreen;
-    font-size: 1em;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  html {
-    display: grid;
-    height: 100%;
-    width: 100%;
-    font-family: Arial;
-    background: linear-gradient(#444, #111);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    overflow: auto;
-  }
-  
-  header {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: #222;
-    font-family: Arial;
-  }
-  
-  .headerSpacer {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    margin: 4em;
-  }
-  
-  body {
-    display: grid;
-    justify-items: center;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    font-family: Arial;
-    height: 100%;
-  }
-  
-  .footerSpacer {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    margin: 3em;
-  }
-  
-  footer {
-    position: fixed;
-    padding-top: 0.8em;
-    height: 2.5em;
-    right: 0px;
-    left: 0px;
-    bottom: 0px;
-    background-color: #222;
-    font-family: Arial;
-    color: #fff;
-    text-align: center;
-  }
-  
-  input {
-    border-style: none;
-    border-radius: 2em;
-    width: 18em;
-    background-color: #eee;
-    padding: 0.8em;
-    font-size: 1em;
-    box-shadow: 0.2em 0.2em lightblue;
-  }
-  
-  button {
-    border-style: none;
-    border-radius: 2em;
-    background-color: #393;
-    padding: 0.8em;
-    color: #fff;
-    font-size: 1em;
-    box-shadow: 0.2em 0.2em darkgreen;
-  }
 }

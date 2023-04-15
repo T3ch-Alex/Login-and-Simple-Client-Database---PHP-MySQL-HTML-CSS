@@ -2,6 +2,8 @@
   include("protect.php");
   include("utils.php");
   include("dbconnect.php");
+
+  $errorMessage = null;
   
   if(isset($_POST['addClient'])) {
     addClient();
@@ -14,7 +16,7 @@
   if(isset($_POST['editClient'])) {
     if(isset($_POST['checkboxList'])) {
       if(count($_POST['checkboxList']) > 1) {
-        customError("Não é possível editar mais de um cliente!");
+        $errorMessage = "Não é possível editar mais de um cliente.";
       } else {
         //header("Location: editClient.php");
       }
@@ -65,6 +67,8 @@
     </div>
   </header>
   <div class="headerSpacer"></div>
+  <?php if(!is_null($errorMessage)) { customError($errorMessage); }?>
+  
   <body>
     <div class="userGreet">
       <p><?php echo $_SESSION['nome'];?>, você tem 0 clientes.</p>
@@ -132,5 +136,4 @@
       <p>This is the footer ok :} Copyright 2023.</p>
     </footer>
   </body>
-  
 </html>

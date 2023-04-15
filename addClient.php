@@ -1,6 +1,10 @@
 <?php
 include("protect.php");
 include("dbconnect.php");
+include("utils.php");
+$errorMessage = null;
+$disableInput = null;
+
 if(isset($_POST['saveData'])) {
 
   $idUsuario = $_SESSION['id'];
@@ -21,7 +25,9 @@ if(isset($_POST['saveData'])) {
     header("Location: account.php");
   }
 } else if(isset($_POST['discardData'])) {
-  header("Location: addClient.php");
+  $disableInput = "disabled";
+  $errorMessage = $disableInput;
+  header("Location: account.php");
 }
 ?>
 
@@ -63,6 +69,8 @@ if(isset($_POST['saveData'])) {
     </div>
   </header>
   <div class="headerSpacer"></div>
+  <?php if(!is_null($errorMessage)) { customError($errorMessage); }?>
+  
   <body>
     <form class="crudForm" action="" method="POST">
       <div class="saveForm">
@@ -75,7 +83,7 @@ if(isset($_POST['saveData'])) {
       </div>
       <div class="saveForm">
         <label>Nome do cliente</label>
-        <input type="text" name="nomeCliente" pattern="[a-zA-Z0-9]+" required minlength="3" maxlength="16" title="Nome inválido">
+        <input type="text" name="nomeCliente" pattern="[a-zA-Z0-9]+" required minlength="3" maxlength="16" title="Nome inválido" <?php echo $disableInput; ?> >
         <label>E-mail</label>
         <input type="text" name="emailCliente" required pattern="[^@\s]+@[^@\s]+" title="E-mail inválido" placeholder="email@example.com">
         <label>Telefone</label>

@@ -1,6 +1,8 @@
 <?php
   include('dbconnect.php');
   include('utils.php');
+
+  $errorMessage = null;
  
   if(isset($_POST['email']) || isset($_POST['senha'])) {
     if(strlen($_POST['email']) == 0) {
@@ -27,16 +29,12 @@
           $_SESSION['nome'] = $usuario['nome'];
           header("Location: account.php");
         } else {
-          customError("Falha no login, e-mail ou senha incorretos");
+          $errorMessage = "Falha no login, e-mail ou senha incorretos";
         }
       } else {
-        customError("Falha no login, e-mail ou senha incorretos");
+        $errorMessage = "Falha no login, e-mail ou senha incorretos";
       }
     }
-  }
-
-  function alert($msg) {
-    echo "<script type='text/javascript'>alert('$msg');</script>";
   }
 ?>
 
@@ -71,6 +69,8 @@
     </div>
   </header>
   <div class="headerSpacer"></div>
+  <?php if(!is_null($errorMessage)) { customError($errorMessage); }?>
+  
   <body>
     <form class="form" id="loginForm" action="" method="POST">
       <p>Faça seu login</p>

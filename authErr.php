@@ -1,3 +1,8 @@
+<?php 
+  include("utils.php");
+  $errorMessage = null; 
+?>
+
 <html lang="pt-br">
   <title>Login</title>
   <head>
@@ -28,6 +33,8 @@
     </div>
   </header>
   <div class="headerSpacer"></div>
+  <?php if(!is_null($errorMessage)) { customError($errorMessage); }?>
+  
   <body>
     <p class="textContainer">
       Você não está logado, acesso negado

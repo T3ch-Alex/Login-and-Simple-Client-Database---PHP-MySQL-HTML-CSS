@@ -1,6 +1,8 @@
 <?php
   include('dbconnect.php');
   include('utils.php');
+
+  $errorMessage = null;
   
   if(isset($_POST['criarConta'])) {
     $nomeCriar = $mysqli->real_escape_string($_POST['nomeCriar']);
@@ -13,16 +15,16 @@
     $confirmeSenha = $mysqli->real_escape_string($_POST['confirmeSenha']);
     
     if($confirmeEmail != $emailCriar) {
-      customError("E-mails não são iguais");
+      $errorMessage = "E-mails não são iguais";
     } else if($confirmeSenha != $senhaCriar) {
-      customError("Senhas não são iguais");
+      $errorMessage = "Senhas não são iguais";
     } else {
       $sql_codeEmail = "SELECT * FROM usuarios WHERE email = '$emailCriar'";
       $sql_queryEmail = $mysqli->query($sql_codeEmail) or die('Falha na execução do SQL: Email query');
       $resultQueryEmail = $sql_queryEmail->num_rows;
         
       if($resultQueryEmail >= 1) {
-        customError("Email em uso");
+        $errorMessage = "Email em uso";
       } else {
         $sql_codeCriar = "INSERT INTO usuarios (nome, email, senha) VALUES ('$nomeCriar', '$emailCriar', '$senhaCriarHash');";
         $sql_queryCriar = $mysqli->query($sql_codeCriar) or die('Falha na execução do SQL: createAcc query');
@@ -64,6 +66,7 @@
     </div>
   </header>
   <div class="headerSpacer"></div>
+  <?php if(!is_null($errorMessage)) { customError($errorMessage); }?>
   <body>
     <form class="form" id="loginForm" action="" method="POST">
       <p>Crie sua conta abaixo!</p>

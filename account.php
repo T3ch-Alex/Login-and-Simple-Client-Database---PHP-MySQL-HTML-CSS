@@ -11,17 +11,25 @@
     header("Location: addClient.php");
   }
 
+  if(isset($_POST['editClient'])) {
+    if(isset($_POST['checkboxList'])) {
+      if(count($_POST['checkboxList']) > 1) {
+        customError("Não é possível editar mais de um cliente!");
+      } else {
+        //header("Location: editClient.php");
+      }
+    }
+  }
+
   if(isset($_POST['removeClient'])) {
     if(isset($_POST['checkboxList'])) {
-      customError("Im here");
-      foreach($_POST['checkboxList'] as $client) {
-        echo $client;
-        //$sql_code_delete = "DELETE FROM clientes WHERE idCliente = '$idCliente'";
-        //$sql_query_delete = $mysqli->query($sql_code_delete) or die("Falha na execução da query: Delete Query");
+      foreach($_POST['checkboxList'] as $clienteID) {
+        $sql_code_delete = "DELETE FROM clientes WHERE idCliente = '$clienteID'";
+        $sql_query_delete = $mysqli->query($sql_code_delete) or die("Falha na execução da query: Delete Query");
       }
       
 
-      header("Location: addClient.php");
+      header("Location: account.php");
     }
   }
 ?>
@@ -67,10 +75,10 @@
           <button class="crudButton" type="submit" id="addUser" name="addClient">
             <i class="fa fa-user-plus"></i>
           </button>
-          <button class="crudButton" type="submit" id="editUser" name="editClient">
+          <button class="crudButton" type="submit" id="editUser" name="editClient" form="clientsForm">
             <i class="fas fa-edit"></i>
           </button>
-          <button class="crudButton" type="submit" id="removeUser" name="removeClient">
+          <button class="crudButton" type="submit" id="removeUser" name="removeClient" form="clientsForm">
             <i class="fa fa-trash"></i>
           </button>
         </div>
@@ -81,7 +89,7 @@
           </button>
         </div>
       </form>
-      <form class="clientsContainer" method="post">
+      <form id="clientsForm" class="clientsContainer" method="POST">
         <?php
           echo "<table>
             <tr> 
@@ -106,7 +114,7 @@
               $telCliente = $row['telCliente'];
               echo "
                 <tr>
-                    <td><input id='checkClientList' type='checkbox' name='checkboxList[]' value='1'></td>
+                    <td><input id='checkClientList' type='checkbox' name='checkboxList[]' value='$idCliente'/></td>
                     <td>$idCliente</td>
                     <td>$nomeCliente</td>
                     <td>$emailCliente</td>

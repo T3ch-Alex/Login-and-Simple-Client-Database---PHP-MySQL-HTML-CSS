@@ -1,17 +1,13 @@
 <?php 
   function customError($message) {
+    $page = $_SERVER['PHP_SELF'];
     echo "
-      <p class='errorWindow'>
-        $message
-      </p>
+      <div class='errorWindow'> 
+        <div>$message</div> 
+        <a class='crudButton' id='closeButton' href='$page'>
+          <i class='fa fa-close'></i>
+        </a>
+      </div>
     ";
   }
-
-  function debug_to_console($data) {
-    $output = $data;
-    if (is_array($output))
-        $output = implode(',', $output);
-
-    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-}
 ?>

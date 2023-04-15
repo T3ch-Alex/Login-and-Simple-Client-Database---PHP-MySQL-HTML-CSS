@@ -20,6 +20,7 @@
   box-shadow: 0.2em 0.2em lightblue;
   justify-items: center;
   font-size: 1em;
+  width: 90vw;
 }
 
 .crudForm {
@@ -41,7 +42,7 @@
 .crudInput {
   border-style: none;
   border-radius: 2em;
-  width: 8em;
+  width: 100%;
   background-color: #eee;
   padding: 0.8em;
   font-size: 1em;
@@ -122,8 +123,9 @@
   display: flex;
   flex-direction: row;
   padding: 0.8em;
-  width: inherit;
-  overflow: auto;
+  height: 25em;
+  overflow-x: auto;
+  overflow-y: scroll;
   background-color: #fff;
   border-radius: 2em;
   border: solid 0.2em lightblue;
@@ -148,7 +150,7 @@
   font-size: 1em;
   border-radius: none;
   box-shadow: none;
-  width: 1em;
+  width: inherit;
 }
 
 .message {
@@ -292,4 +294,46 @@ button {
   color: #fff;
   font-size: 1em;
   box-shadow: 0.2em 0.2em darkgreen;
+}
+
+#checkbox {
+  width: 1em;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 0.2em solid lightblue;
+  text-align: left;
+  padding: 0.4em;
+}
+
+th {
+  background-color: lightgray;
+}
+
+tr:hover {background-color: lightblue;}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.2em grey;
+  border-radius: 1em;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: darkgrey;
+  border-radius: 1em;
+}
+
+::-webkit-scrollbar-corner {
+  border-radius: 1em;
 }

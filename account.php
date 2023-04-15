@@ -97,8 +97,8 @@
         <?php
           echo "<table>
             <tr> 
-              <th> </th>
-              <th> ID </th> 
+              <th id='checkbox'> </th>
+              <th id='checkbox'> ID </th> 
               <th> Nome </th> 
               <th> E-mail </th> 
               <th> Contato </th> 

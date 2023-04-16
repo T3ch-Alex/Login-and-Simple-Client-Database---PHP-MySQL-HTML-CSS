@@ -5,13 +5,29 @@ include("utils.php");
 $errorMessage = null;
 $disableInput = null;
 
-if(isset($_POST['saveData'])) {
+$idUsuario = $_SESSION['id'];
+$idClienteEdit = $_SESSION['clienteID'];
 
-  $idUsuario = $_SESSION['id'];
+//Client edit query
+$sql_client_code = "SELECT * FROM clientes WHERE idCliente = '$idClienteEdit'";
+$sql_client_query = $mysqli->query($sql_client_code) or die('Falha na execução do SQL: clients query');
+$sql_client_result = $sql_client_query->num_rows;
+
+if($sql_client_result > 0){
+  while($row = $sql_client_query->fetch_assoc()) {
+    //Storing each value from the client
+    $nomeClienteEdit = $row['nomeCliente'];
+    $emailClienteEdit = $row['emailCliente'];
+    $telClienteEdit = $row['telCliente'];
+  }
+} else { die("Algo deu errado, tente novamente.");}
+
+if(isset($_POST['saveData'])) {
   $nomeCliente = $mysqli->real_escape_string($_POST['nomeCliente']);
   $emailCliente = $mysqli->real_escape_string($_POST['emailCliente']);
   $telCliente = $mysqli->real_escape_string($_POST['telCliente']);
 
+  //User query
   $sql_codeId = "SELECT * FROM usuarios WHERE id = '$idUsuario'";
   $sql_queryId = $mysqli->query($sql_codeId) or die('Falha na execução do SQL: Id query');
   $resultQueryId = $sql_queryId->num_rows;
@@ -19,8 +35,9 @@ if(isset($_POST['saveData'])) {
   if($resultQueryId > 1) {
     die("Algo deu errado, atualize a página e faça login novamente.");
   } else {
-    $sql_codeAddClient = "INSERT INTO clientes (idUsuario, nomeCliente, emailCliente, telCliente) VALUES ('$idUsuario', '$nomeCliente', '$emailCliente', '$telCliente');";
-    $sql_queryAddClient = $mysqli->query($sql_codeAddClient) or die('Falha na execução do SQL: AddClient query');
+    //Editing client query
+    $sql_codeEditClient = "UPDATE clientes SET nomeCliente = '$nomeCliente', emailCliente = '$emailCliente', telCliente = '$telCliente' WHERE idCliente = '$idClienteEdit' AND idUsuario = '$idUsuario';";
+    $sql_queryEditClient = $mysqli->query($sql_codeEditClient) or die('Falha na execução do SQL: AddClient query');
     
     header("Location: account.php");
   }
@@ -31,7 +48,7 @@ if(isset($_POST['saveData'])) {
 ?>
 
 <html lang="pt-br">
-  <title>Add Client</title>
+  <title>Edit Client</title>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=0.7,maximum-scale=0.7,user-scalable=no"/>
   </head>
@@ -82,11 +99,11 @@ if(isset($_POST['saveData'])) {
       </div>
       <div class="saveForm">
         <label>Nome do cliente</label>
-        <input type="text" name="nomeCliente" pattern="[a-zA-Z0-9]+" <?php echo $disableInput; ?> minlength="3" maxlength="16"  title="Nome inválido">
+        <input type="text" name="nomeCliente" pattern="[a-zA-Z0-9]+" <?php echo $disableInput; ?> minlength="3" maxlength="16"  title="Nome inválido" value="<?php echo $nomeClienteEdit;?>">
         <label>E-mail</label>
-        <input type="text" name="emailCliente" pattern="[^@\s]+@[^@\s]+" <?php echo $disableInput; ?> title="E-mail inválido" placeholder="email@example.com">
+        <input type="text" name="emailCliente" pattern="[^@\s]+@[^@\s]+" <?php echo $disableInput; ?> title="E-mail inválido" placeholder="email@example.com" value="<?php echo $emailClienteEdit;?>">
         <label>Telefone</label>
-        <input type="number" name="telCliente" <?php echo $disableInput; ?> minlength="10" maxlength="11" title="Telefone inválido" placeholder="(01)2345-6789">
+        <input type="number" name="telCliente" <?php echo $disableInput; ?> minlength="10" maxlength="11" title="Telefone inválido" placeholder="(01)2345-6789" value="<?php echo $telClienteEdit;?>">
         </input>
       </div>
     </form>

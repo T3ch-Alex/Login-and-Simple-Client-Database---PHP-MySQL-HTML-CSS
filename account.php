@@ -18,7 +18,10 @@
       if(count($_POST['checkboxList']) > 1) {
         $errorMessage = "Não é possível editar mais de um cliente.";
       } else {
-        //header("Location: editClient.php");
+        foreach($_POST['checkboxList'] as $clienteID) {
+          $_SESSION['clienteID'] = $clienteID;
+        }
+        header("Location: editClient.php");
       }
     }
   }

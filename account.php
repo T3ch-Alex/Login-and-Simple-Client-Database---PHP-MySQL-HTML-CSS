@@ -4,6 +4,7 @@
   include("dbconnect.php");
 
   $errorMessage = null;
+  $idUsuario = $_SESSION['id'];
   
   if(isset($_POST['addClient'])) {
     addClient();
@@ -32,11 +33,13 @@
         $sql_code_delete = "DELETE FROM clientes WHERE idCliente = '$clienteID'";
         $sql_query_delete = $mysqli->query($sql_code_delete) or die("Falha na execução da query: Delete Query");
       }
-      
-
       header("Location: account.php");
     }
   }
+  $sql_code_count = "SELECT * FROM clientes WHERE idUsuario = '$idUsuario'";
+  $sql_query_count = $mysqli->query($sql_code_count) or die("Falha na execução da query: Count Query");
+  $sql_result_count = $sql_query_count->num_rows;
+  $_SESSION['clientsCount'] = $sql_result_count;
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +77,7 @@
   
   <body>
     <div class="userGreet">
-      <p><?php echo $_SESSION['nome'];?>, você tem 0 clientes.</p>
+      <p><?php echo $_SESSION['nome'];?>, você tem <?php echo $_SESSION['clientsCount']; ?> clientes.</p>
     </div>
     <div class="database">
       <form class="crudForm" action="" method="POST">
@@ -88,10 +91,13 @@
           <button class="crudButton" type="submit" id="removeUser" name="removeClient" form="clientsForm">
             <i class="fa fa-trash"></i>
           </button>
+          <a class="crudButton" href="account.php" id="refresh" name="refresh">
+            <i class="fa fa-refresh"></i>
+          </a>
         </div>
         <div class="searchClients">
-          <input class="crudInput" type="text"></input>
-          <button class="crudButton">
+          <input class="crudInput" type="text" name="searchInput"></input>
+          <button class="crudButton" type="submit" name="searchClient">
             <i class="fa fa-search"></i>
           </button>
         </div>
@@ -109,7 +115,23 @@
           ";
 
           $idUsuario = $_SESSION['id'];
-          $sql_clients_code = "SELECT * FROM clientes WHERE idUsuario = '$idUsuario'";
+          $sql_clients_code = null;
+
+
+          //If you search a client, change the query code
+          if(isset($_POST['searchClient'])) {
+            $clientSearch = $_POST['searchInput'];
+            $sql_clients_code = "SELECT * FROM clientes 
+            WHERE idUsuario = '$idUsuario' AND 
+            (
+              nomeCliente = '$clientSearch' OR
+              emailCliente = '$clientSearch' OR
+              idCliente = '$clientSearch'
+            )";
+          } else {
+            $sql_clients_code = "SELECT * FROM clientes WHERE idUsuario = '$idUsuario'";
+          }
+          
           $sql_clients_query = $mysqli->query($sql_clients_code) or die('Falha na execução do SQL: clients query');
           $sql_clients_result = $sql_clients_query->num_rows;
 

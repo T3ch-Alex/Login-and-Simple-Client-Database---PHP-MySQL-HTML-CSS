@@ -2,7 +2,18 @@
 This is a simple login, account creation and client database system with CRUD operations. This project uses PHP, MySQL, HTML and CSS. 
 <br></br>
 It's hosted at: https://loginclientdatabase.infinityfreeapp.com/
-<br>
+
+## Features
+This project has:
+- Session based auth;
+- Account creation, log in and log out;
+- Password hash;
+- Client database with basic info;
+- CRUD operations;
+- Search client function;
+- Responsiveness;
+- Doesn't break on mobile devices (yay!);
+
 ## Why this project was made?
 I wanted to expand to another language besides JavaScript, that was server-side so I thought the best one to learn was PHP. It's quite simple and use it with MySQL to create and manipulate a database was a fun experience.
 <br></br>

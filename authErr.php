@@ -4,9 +4,10 @@
 ?>
 
 <html lang="pt-br">
-  <title>Login</title>
+  <title>Erro de Autorização</title>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=0.7,maximum-scale=0.7,user-scalable=no"/>
+    <link rel="icon" type="image/png" href="favicons/favicon.png">
   </head>
   <style>
     <?php
@@ -39,7 +40,7 @@
     <p class="textContainer">
       Você não está logado, acesso negado
     </p>
-    <a class="linkButton" href="index.php">Entrar</a>
+    <a class="linkButton" href="login.php">Entrar</a>
     <div class="footerSpacer"></div>
     <footer>
       <a>This is the footer ok :} Copyright 2023.</a>
